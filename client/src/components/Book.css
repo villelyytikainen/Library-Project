@@ -1,0 +1,16 @@
+.book-item{
+    box-sizing: border-box;
+    border: 1px solid white;
+    margin: 1rem 0 0 1rem;
+    border-radius: 1rem;
+    width: fit-content;
+    max-width: 20rem;
+    padding: 0 1rem 0.5rem 1rem;
+    list-style-type: none;
+    color: white;
+    cursor: pointer;
+}
+
+.book-item img {
+    max-width: 100%;
+}

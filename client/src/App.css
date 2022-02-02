@@ -1,0 +1,27 @@
+.App {
+	margin:0;
+	padding:0;
+	text-align: center;
+	background-color: #16161a;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.container {
+	width: 80%;
+	padding: 5rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	height: 100%;
+}
+
+.books-container{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	
+}
+

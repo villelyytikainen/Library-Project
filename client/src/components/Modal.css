@@ -1,0 +1,50 @@
+.modal-container{
+    display: flex;
+    justify-content: center;
+    color:white;
+    position:absolute;
+    background-color: rgba(0,0,0,0.5);
+    width:100%;
+    height:100%;
+}
+.new-book-form{
+    position: relative;
+    background-color: #070707;
+    padding: 3rem;
+    margin-top: 25vh;
+    border: 2px solid white;
+    border-radius: 1rem;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;   
+    z-index: 5;
+}
+
+.close-modal{
+    background: none;
+    font-size: 1rem;
+    border:none;
+    border-radius: 5px;
+    position:absolute;
+    right: 10px;
+    top:10px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 900;
+    cursor: pointer;
+    transition: 500ms;
+    transform: rotateZ(90deg);
+}
+
+.close-modal:hover{
+    color: rgba(255,255,255,1);
+    transform: scale(1.5);
+    transition: 400ms;
+}
+
+.input-container{
+    margin: 0.3rem;
+    width: 17rem;
+    display: flex;
+    justify-content:space-between;
+}

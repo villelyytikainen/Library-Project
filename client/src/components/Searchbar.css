@@ -1,0 +1,41 @@
+.autocomplete-list{
+	padding:0rem;
+	text-align: start;
+	top: 1.55rem;
+	width: 21rem;
+	list-style-type: none;
+	position: absolute;
+	background-color: white;
+	color: black;
+}
+
+.autocomplete-list > li{
+	padding: 0.3rem;
+}
+
+.autocomplete-list > li:hover{
+	text-align: left;
+	padding:0.3rem;
+	margin:0;
+	background-color: blanchedalmond;
+	cursor: pointer;
+}
+.search-bar-container{
+	box-sizing: border-box;
+	padding-top: 1rem;
+	left: 0;
+	position:absolute;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 3rem;
+	background-color: #16161a;
+}
+
+.search-bar{
+	padding: 0.3rem 1rem 0.3rem 1rem;
+	height: 1rem;
+	width: 20rem;
+	border-radius: 1rem;
+	border:none;
+}
