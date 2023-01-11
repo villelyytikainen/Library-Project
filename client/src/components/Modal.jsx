@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Modal.css'
 
-export default function Modal({showModal, toggleModal}) {
+export default function Modal({showModal, toggleModal, addBook}) {
     const [formData, setFormData] = useState({})
 
     const handleChange = (event) => {
@@ -9,30 +9,26 @@ export default function Modal({showModal, toggleModal}) {
         const checked = event.target.checked;
         const type = event.target.type;
         const value = event.target.value;
-        setFormData(data => type === 'text' ? ({...data, [name]:value}) : ({...data, [name]:checked}))
+        setFormData(data => type === 'text' ? 
+            ({...data, [name]:value}) : 
+            ({...data, [name]:checked}))
     }
 
-    const addNewBook = async(event) => {
-		event.preventDefault();
-		await fetch('http://localhost:3001/books',{
-			method: 'POST',
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-			body: JSON.stringify(formData)
-		}).then(res => res.json())
-	}
+    const submitForm = (event) => {
+        event.preventDefault();
+        console.log(formData)
+        addBook(formData)
+    }
 
     if(showModal){
         return (
             <div onClick={toggleModal} className="modal-container">
-                <form onClick={(e) => e.stopPropagation()} onSubmit={addNewBook} className="new-book-form">
+                <form onClick={(e) => e.stopPropagation()} onSubmit={submitForm} className="new-book-form">
                     <button onClick={toggleModal} className="close-modal">X</button>
                     <div className="book-title-container input-container">
-                        <label htmlFor="book-title">Title</label>
+                        <label htmlFor="title">Title</label>
                         <input require 
-                               name="book-title" 
+                               name="title" 
                                type="text" 
                                value={formData.title} 
                                onChange={handleChange} 
@@ -40,9 +36,9 @@ export default function Modal({showModal, toggleModal}) {
                         </input>
                     </div>
                     <div className="book-author-container input-container">
-                        <label htmlFor="book-author">Author</label>
+                        <label htmlFor="author">Author</label>
                         <input required 
-                               name="book-author" 
+                               name="author" 
                                type="text" 
                                value={formData.author}
                                onChange={handleChange}    
@@ -50,9 +46,9 @@ export default function Modal({showModal, toggleModal}) {
                         </input>
                     </div>
                     <div className="book-description-container input-container">
-                        <label htmlFor="book-description">Description</label>
+                        <label htmlFor="description">Description</label>
                         <input required
-                               name="book-description" 
+                               name="description" 
                                type="text" 
                                value={formData.description}  
                                onChange={handleChange}  
@@ -60,8 +56,8 @@ export default function Modal({showModal, toggleModal}) {
                         </input>
                     </div>
                     <div className="book-read-container">
-                        <label htmlFor='book-read'>Read</label>
-                        <input name='book-read' 
+                        <label htmlFor='read'>Read</label>
+                        <input name='read' 
                                type="checkbox"
                                value={formData.read}  
                                onChange={handleChange}>

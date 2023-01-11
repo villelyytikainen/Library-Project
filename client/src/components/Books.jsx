@@ -1,7 +1,7 @@
 import './Books.css'
 import Book from './Book.jsx'
 
-const Books = ({books, filtered, searchContent, toggleBookModal}) => {
+const Books = ({books, filtered, searchContent, toggleBookModal, editBook, deleteBook}) => {
     if(books.length === 0){
         return (
         <div className="books-container">
@@ -16,7 +16,9 @@ const Books = ({books, filtered, searchContent, toggleBookModal}) => {
                         <Book key={index} 
                               title={book.title} 
                               description={book.description} 
-                              toggleBookModal={toggleBookModal} />
+                              toggleBookModal={toggleBookModal}
+                              editBook={editBook}
+                              deleteBook={deleteBook} />
                     ))}
                 </ul>
             </div>
@@ -38,7 +40,9 @@ const Books = ({books, filtered, searchContent, toggleBookModal}) => {
                         <Book key={index} 
                               title={book.title} 
                               description={book.description} 
-                              toggleBookModal={toggleBookModal} />
+                              toggleBookModal={toggleBookModal} 
+                              editBook={editBook}
+                              deleteBook={deleteBook} />
                     ))}
                 </ul>
             </div>
